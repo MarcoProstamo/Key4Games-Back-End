@@ -11,7 +11,7 @@
                     New Game Title...
                 </div>
                 <div>
-                    <button class="btn btn-success fw-bold text-light px-4 me-5">ADD ➕</button>
+                    <a href="games/create" class="btn btn-success fw-bold text-light px-4 me-5">ADD ➕</a>
                 </div>
             </div>
             @foreach ($games as $game)
