@@ -22,7 +22,7 @@
                         </a>
                     </div>
                     <div>
-                        <button class="btn btn-warning fw-bold text-dark me-2">EDIT 🖋️</button>
+                        <a href="games/{{ $game['id'] }}/edit" class="btn btn-warning fw-bold text-dark me-2">EDIT 🖋️</a>
                         <button class="btn btn-danger fw-bold text-dark">DELETE 🗑️</button>
                     </div>
                 </div>

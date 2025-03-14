@@ -31,4 +31,22 @@ class GameController extends Controller
         if ($request->has('genre_id')) $game->genres()->attach($request->input('genre_id'));
         return redirect("/games");
     }
+
+    public function edit(Game $game)
+    {
+        $genres = Genre::all();
+        return view("/pages/games/edit", compact(["game", "genres"]));
+    }
+
+    public function update(Request $request, Game $game)
+    {
+        $data = $request->except('_token');
+        $game->update($data);
+        if ($request->has('genre_id')) {
+            $game->genres()->detach();
+            $game->genres()->attach($request->input('genre_id'));
+            $game->genres()->sync($request->input('genre_id'));
+        }
+        return redirect('/games/' . $game->id);
+    }
 }
