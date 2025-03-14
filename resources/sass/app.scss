@@ -6,3 +6,14 @@
 
 // Bootstrap
 @import 'bootstrap/scss/bootstrap';
+
+// # Custom
+
+*{
+    user-select: none;
+}
+
+.list-group-item-action:hover{
+    background-color: #525052 !important;
+    color: whitesmoke !important;
+}
