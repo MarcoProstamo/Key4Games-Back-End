@@ -10,6 +10,11 @@ class GameController extends Controller
     public function index()
     {
         $games = Game::all();
-        return view("home", compact("games"));
+        return view("/pages/games/index", compact("games"));
+    }
+
+    public function show(Game $game)
+    {
+        return view("/pages/games/show", compact("game"));
     }
 }
