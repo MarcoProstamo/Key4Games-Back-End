@@ -21,9 +21,13 @@
                             {{ $game['title'] }}
                         </a>
                     </div>
-                    <div>
-                        <a href="games/{{ $game['id'] }}/edit" class="btn btn-warning fw-bold text-dark me-2">EDIT 🖋️</a>
-                        <button class="btn btn-danger fw-bold text-dark">DELETE 🗑️</button>
+                    <div class="d-flex align-items-center gap-3">
+                        <a href="games/{{ $game['id'] }}/edit" class="btn btn-warning fw-bold text-dark">EDIT 🖋️</a>
+                        <form action="games/{{ $game['id'] }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button class="btn btn-danger fw-bold text-dark">DELETE 🗑️</button>
+                        </form>
                     </div>
                 </div>
             @endforeach

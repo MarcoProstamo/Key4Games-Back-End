@@ -49,4 +49,11 @@ class GameController extends Controller
         }
         return redirect('/games/' . $game->id);
     }
+
+    public function destroy(Game $game)
+    {
+        $game->genres()->detach();
+        $game->delete();
+        return redirect('/games');
+    }
 }
