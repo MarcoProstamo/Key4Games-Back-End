@@ -23,14 +23,36 @@
                     </div>
                     <div class="d-flex align-items-center gap-3">
                         <a href="games/{{ $game['id'] }}/edit" class="btn btn-warning fw-bold text-dark">EDIT 🖋️</a>
-                        <form action="games/{{ $game['id'] }}" method="POST">
-                            @csrf
-                            @method('DELETE')
-                            <button class="btn btn-danger fw-bold text-dark">DELETE 🗑️</button>
-                        </form>
+                        <button type="button" class="btn btn-danger text-dark" data-bs-toggle="modal"
+                            data-bs-target="#deleteModal">
+                            DELETE 🗑️
+                        </button>
                     </div>
                 </div>
             @endforeach
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Deleting a Record!</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cancel"></button>
+                </div>
+                <div class="modal-body">
+                    Are you sure you want to delete this record?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-bs-dismiss="modal">Cancel</button>
+                    <form action="games/{{ $game['id'] }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button class="btn btn-danger fw-bold text-dark">DELETE 🗑️</button>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
 @endsection

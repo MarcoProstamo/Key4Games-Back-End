@@ -10,9 +10,6 @@
             <li>{{ $game['description'] }}</li>
             <li>{{ $game['developer'] }}</li>
             <li>{{ $game['publisher'] }}</li>
-            {{-- @php
-                dd($game->genres);
-            @endphp --}}
             <li>{{ $game->genres->first()->name }}</li>
         </ul>
         <a href="/games" class="btn btn-secondary">Back to Games</a>
