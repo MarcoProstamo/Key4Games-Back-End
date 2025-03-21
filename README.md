@@ -5,7 +5,7 @@
 ## Installation & Setup
 1. Clone the repository:
    ```sh
-   git clone [Repo Link](https://github.com/MarcoProstamo/Key4Games-Back-End.git)
+   git clone <repository_url>
    cd <project_directory>
    ```
 
