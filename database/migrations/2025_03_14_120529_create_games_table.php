@@ -18,6 +18,8 @@ return new class extends Migration
             $table->string('developer');
             $table->string('publisher');
             $table->foreignId('genre_id')->constrained();
+            $table->string('price');
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }
