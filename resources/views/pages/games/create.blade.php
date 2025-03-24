@@ -24,6 +24,11 @@
             </div>
 
             <div class="form-floating mb-3">
+                <input type="number" class="form-control" id="price" name="price" placeholder="price" min=0>
+                <label for="price">Price</label>
+            </div>
+
+            <div class="form-floating mb-3">
                 <textarea name="description" class="form-control" id="description" placeholder="Description"></textarea>
                 <label for="description">Description</label>
             </div>

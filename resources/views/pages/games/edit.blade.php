@@ -28,6 +28,12 @@
             </div>
 
             <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="price" name="price" placeholder="price"
+                    value="{{ $game['price'] }}">
+                <label for="price">Price</label>
+            </div>
+
+            <div class="form-floating mb-3">
                 <textarea name="description" class="form-control" id="description" placeholder="Description">{{ $game['description'] }}</textarea>
                 <label for="description">Description</label>
             </div>
